@@ -1,16 +1,15 @@
 import './styles.css';
+import { Counter } from './Counter';
 
- export const CardComponent = ({title , price}) => {
-    function saludar() {
-        alert("Agregado!");
-    }
+ export const CardComponent = ({name, precio , stock}) => {
+    
     return(
             <div className="card">
-                <h1> {title} </h1>
-                <strong> {price} </strong>
-                <button onClick={() => { saludar() }}> Agregar al carrito </button>
-            
+                <h1> {name} </h1>
+                <strong> ${precio} </strong>
+                <button> Agregar al carrito </button>
+                <Counter stock={stock}/>
             </div>
 
-    )
+    ) 
 }

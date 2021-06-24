@@ -7,11 +7,6 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { HomeConteiner } from './Conteiner';
 
 function App() {
-  const product = [ {id: 1, title :"Camiseta Boca" , price: "$7800"},
-                    {id: 2, title  :"Camiseta River" , price: "$6700"},
-                    {id: 3, title  :"Campera Boca" , price: "$12800"},
-                    {id: 4, title  :"Campera Barcelona" , price: "$15800"}
-  ];
   return (
     <div className="App">
       <header className="App-header">
@@ -31,12 +26,10 @@ function App() {
         >
           Proyecto
         </a>
-        <hr/>
-        <br/>
-        <CardComponent productData = {product[0]}/>
+        {/*  <CardComponent productData = {product[0]}/>
         <CardComponent productData = {product[1]}/>
         <CardComponent productData = {product[2]}/>
-        <CardComponent productData = {product[3]}/>
+        <CardComponent productData = {product[3]}/>*/}
         <HomeConteiner/>
       </header>
     </div>
