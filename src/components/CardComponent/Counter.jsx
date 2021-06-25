@@ -15,11 +15,10 @@ export const Counter = ({stock}) => {
         
     } else {
         setCounter(counter)
-    }
-
-        const onAdd = () =>{
+    }}
+    const onAdd = () =>{
             console.log(`Compraste ${counter} de articulos`)
-    } 
+    }
     return (
         <div>
             <button onClick= {sumar}>+</button>
@@ -28,4 +27,4 @@ export const Counter = ({stock}) => {
             <button onClick={onAdd} variant="primary"> Comprar </button>
         </div>
     )
-}}
+}
