@@ -9,6 +9,7 @@ import { Counter } from './Counter';
     
     return(
             <div className="card">
+                <img src={img}/>
                 <h1> {name} </h1>
                 <strong> ${precio} </strong>
                 <button> Agregar al carrito </button>
