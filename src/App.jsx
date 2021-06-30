@@ -6,6 +6,7 @@ import { NAME_App } from "./Utils/const";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { HomeConteiner } from './Conteiner';
 import {getData} from './Utils/const'
+import {useEffect, useState} from "react"
 
 function App() {
   let [productos, setProductos] = useState([]);
@@ -33,11 +34,11 @@ function App() {
 
   return (
     <div>
-      <div ClassName="container">
-        <div ClassName="row">
+      <div className="container">
+        <div className="row">
       
           {productos.length == 0 ? 'Hola estoy cargando' : 'Cargado'}
-          {productos.map(elemnt=>{
+          {productos.map(element=>{
         return (
 
             <CardComponent title={element.title} img={element.img} price={element.price}/>

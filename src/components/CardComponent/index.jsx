@@ -1,7 +1,7 @@
 import './styles.css';
 import { Counter } from './Counter';
 
- export const CardComponent = ({name, precio , stock}) => {
+ export const CardComponent = ({title, price , stock , img}) => {
 
     const onAdd = () =>{
         console.log(`Compraste de articulos`)
@@ -10,8 +10,8 @@ import { Counter } from './Counter';
     return(
             <div className="card">
                 <img src={img}/>
-                <h1> {name} </h1>
-                <strong> ${precio} </strong>
+                <h1> {title} </h1>
+                <strong> ${price} </strong>
                 <button> Agregar al carrito </button>
                 <Counter stock={stock}  onAdd ={onAdd}/>
             </div>

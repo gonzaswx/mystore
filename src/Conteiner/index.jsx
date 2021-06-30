@@ -4,15 +4,15 @@ import { NavbarComponent } from "../components/NavBarComponent/Index";
 
 export const HomeConteiner = () => {
         const product = {
-            name: "Botines",
-            precio: 6500,
+            title: "Botines",
+            price: 6500,
             stock: 5
         }
     
     return (
         <>
         <div>
-            <CardComponent name={product.name} precio={product.precio} stock={product.stock}/>
+            <CardComponent title={product.title} price={product.price} stock={product.stock} img={product.img}/>
                 <button variant="primary">
                    Comprar
                  </button>
