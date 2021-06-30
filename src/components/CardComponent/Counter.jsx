@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import { Button } from 'react-bootstrap'
+import { button } from 'react-bootstrap'
 
 export const Counter = ({stock, onAdd}) => {
     const [counter,setCounter] = useState(1)
@@ -21,7 +21,7 @@ export const Counter = ({stock, onAdd}) => {
     return (
         <div>
 
-            {stock>0 ?
+            {stock<0 ?
             <>
             <button onClick= {sumar}>+</button>
             <p>{counter}</p>

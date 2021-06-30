@@ -14,22 +14,21 @@ function App() {
   useEffect(() => {
     const waitForData = async () => {
       let data = await getData('Botines'); 
-      setProductos(data);
+      let aux = data.map (element => {
+        return {
+          title: element.title,
+          img: element.thumbnail,
+          price: element.price
+        }
+      });
+      setProductos(aux);
     }
 
     waitForData();
   }, [])
 
   if (productos.length > 0) {
-    let aux = productos.map (element => {
-      return {
-        title: element.title,
-        img:element.thumbnail,
-        price:element.price
-      }
-    });
-    console.log(aux)
-    console.log(productos)
+    console.log(productos);
   }
 
   return (

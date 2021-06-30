@@ -12,7 +12,7 @@ export const HomeConteiner = () => {
     return (
         <>
         <div>
-            <CardComponent title={product.title} price={product.price} stock={product.stock} img={product.img}/>
+            <CardComponent title={product.title} price={product.price} img={product.img}/>
                 <button variant="primary">
                    Comprar
                  </button>
