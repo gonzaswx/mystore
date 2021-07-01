@@ -1,12 +1,10 @@
 import { useState } from "react";
-import { CardComponent } from "../components/CardComponent";
-import { NavbarComponent } from "../components/NavBarComponent/Index";
+import { CardComponent } from "../CardComponent";
+import { NavbarComponent } from "../NavBarComponent/Index";
+import ItemDetailContainer from "./ItemDetailConteiner";
 
 export const HomeConteiner = () => {
         const product = {
-            title: "Botines",
-            price: 6500,
-            stock: 5
         }
     
     return (
@@ -16,6 +14,7 @@ export const HomeConteiner = () => {
                 <button variant="primary">
                    Comprar
                  </button>
+            <ItemDetailContainer/>     
         </div>
         </>
     )}

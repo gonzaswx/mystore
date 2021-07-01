@@ -4,12 +4,12 @@ import { CardComponent } from "./components/CardComponent";
 import { NavbarComponent } from "./components/NavBarComponent/Index";
 import { NAME_App } from "./Utils/const";
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { HomeConteiner } from './Conteiner';
+import { HomeConteiner } from './components/Conteiner';
 import {getData} from './Utils/const'
 import {useEffect, useState} from "react"
 
 function App() {
-  let [productos, setProductos] = useState([]);
+  const [productos, setProductos] = useState([]);
 
   useEffect(() => {
     const waitForData = async () => {
@@ -26,10 +26,6 @@ function App() {
 
     waitForData();
   }, [])
-
-  if (productos.length > 0) {
-    console.log(productos);
-  }
 
   return (
     <div>
