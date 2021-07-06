@@ -1,30 +1,39 @@
-import React from 'react';
-import { CardComponent } from '../CardComponent';
-import {useEffect, useState} from "react"
-import ItemDetailComponent from "./ItemDetailComponent";
+import React, { useEffect, useState } from "react";
+import { CardComponent } from "../CardComponent";
+import ItemDetail from "./ItemDetail";
 
-const ItemDetailContainer = (props) => {
+const ItemDetailConteiner = () => {
 
-    const [item, setItem] = useState ()
+    const [item, setItem] = useState()
 
-    useEffect (() => {
+    useEffect(() =>{
+        fetch  (
+            `https://api.mercadolibre.com/items/MLA928345349`        
+        )
+        .then(response => response.json())
+        .then(response => {
+            let aux =
+                 {
+                  title: response.title,
+                  img: response.thumbnail,
+                  price: response.price
+                }
+                setItem(aux);
+              });
+ },[])
 
-        fetch("json/productos.json")
-            .then((response) => response.json())
-            .then((datos) => {
-                setTimeout(() => {
-                    setItem(datos[0]);
-                }, 2000); 
-                });
-    },[item])
+console.log(item);
+
 
     return (
         <>
-        <ItemDetailComponent item={item}/>
-        </> 
+            {item == undefined ?  
+            <p> No hay stock </p>
+            : 
+            <ItemDetail item={item} />
+            }
+        </>
     )
 }
 
-export default ItemDetailContainer 
-
-{/* */}
+export default ItemDetailConteiner

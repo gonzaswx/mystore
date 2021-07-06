@@ -1,20 +1,20 @@
 import { useState } from "react";
 import { CardComponent } from "../CardComponent";
 import { NavbarComponent } from "../NavBarComponent/Index";
-import ItemDetailContainer from "./ItemDetailConteiner";
+
 
 export const HomeConteiner = () => {
-        const product = {
+        const productos = {
         }
     
     return (
         <>
         <div>
-            <CardComponent title={product.title} price={product.price} img={product.img}/>
+            <CardComponent title={productos.title} price={productos.price} img={productos.img}/>
                 <button variant="primary">
                    Comprar
                  </button>
-            <ItemDetailContainer/>     
+  
         </div>
         </>
     )}

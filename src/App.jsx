@@ -7,48 +7,23 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { HomeConteiner } from './components/Conteiner';
 import {getData} from './Utils/const'
 import {useEffect, useState} from "react"
+import { ItemListConteiner } from './components/Conteiner/ItemListConteiner';
+import ItemDetailConteiner from './components/Conteiner/ItemDetailConteiner';
+
 
 function App() {
-  const [productos, setProductos] = useState([]);
-
-  useEffect(() => {
-    const waitForData = async () => {
-      let data = await getData('Botines'); 
-      let aux = data.map (element => {
-        return {
-          title: element.title,
-          img: element.thumbnail,
-          price: element.price
-        }
-      });
-      setProductos(aux);
-    }
-
-    waitForData();
-  }, [])
-
+ 
   return (
-    <div>
-      <div className="container">
-        <div className="row">
-      
-          {productos.length == 0 ? 'Hola estoy cargando' : 'Cargado'}
-          {productos.map(element=>{
-        return (
-
-            <CardComponent title={element.title} img={element.img} price={element.price}/>
-          
-          
-          )
-        })}
-        </div>
-      </div>
-    </div>  
+    <> 
+            <ItemDetailConteiner/>
+            <ItemListConteiner/>
+    </>  
   );
 }
 
 export default App;
 
+{/* */}
 
 
 {/* <header className="App-header">
