@@ -11,7 +11,8 @@ import { ItemListConteiner } from './components/Conteiner/ItemListConteiner';
 import ItemDetailConteiner from './components/Conteiner/ItemDetailConteiner';
 import { BrowserRouter, Route , Switch } from "react-router-dom";
 import { ContactConteiner } from './components/Conteiner/ContactConteiner';
-import ItemDetail from './components/Conteiner/ItemDetail';
+import { ItemListConteiner3 } from './components/Conteiner';
+import { ItemListConteiner2 } from './components/Conteiner/ItemListConteiner2';
 
 function App() {
  
@@ -26,7 +27,9 @@ function App() {
       </nav>
       
         <Switch>
-          <Route exact path= "/" component={ItemListConteiner}/>
+        <Route exact path= "/" component={ItemListConteiner3}/>
+          <Route exact path= "/Camaras y accesorios" component={ItemListConteiner2}/>
+          <Route exact path= "/Samsung" component={ItemListConteiner}/>
           <Route exact path= "/Detail" component ={ItemDetailConteiner}/>
           <Route exact path="/contacto" component={ContactConteiner}/>
           <Route path="*" component={() => <h1>Error 404</h1>} />

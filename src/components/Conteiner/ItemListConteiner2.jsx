@@ -4,14 +4,14 @@ import { getData } from '../../Utils/const';
 import ItemDetailConteiner from './ItemDetailConteiner';
 import { Link } from 'react-router-dom';
 
-export const ItemListConteiner3 = () => {
+export const ItemListConteiner2 = () => {
 
 
 const [productos, setProductos] = useState([]);
 
 useEffect(() => {
     fetch  (
-        `https://api.mercadolibre.com/sites/MLA/search?category=MLA1051`        
+        `https://api.mercadolibre.com/sites/MLA/search?category=MLA1039`        
     )
     .then(response => response.json())
     .then(response => {
@@ -53,5 +53,3 @@ return (
 
 );
 }
-
-              
