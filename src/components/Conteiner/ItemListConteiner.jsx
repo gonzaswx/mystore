@@ -2,6 +2,7 @@ import {React, useState, useEffect} from 'react'
 import { CardComponent } from '../CardComponent';
 import { getData } from '../../Utils/const';
 import ItemDetailConteiner from './ItemDetailConteiner';
+import { Link } from 'react-router-dom';
 
 export const ItemListConteiner = () => {
 
@@ -18,7 +19,8 @@ useEffect(() => {
             return {
               title: element.title,
               img: element.thumbnail,
-              price: element.price
+              price: element.price,
+              stock: element.available_quantity
             }
           
           });
@@ -35,8 +37,11 @@ return (
         : productos.map((productos, index)=>{
             return (              
                 <>
+                
 
-                <CardComponent title={productos.title} price={productos.price} img={productos.img} key={index}/>
+                <CardComponent title={productos.title} price={productos.price} img={productos.img} stock={productos.available_quantity} key={index}/>
+                
+
                 
                 </>
                 )

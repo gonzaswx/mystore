@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { CardComponent } from "../CardComponent";
 import ItemDetail from "./ItemDetail";
 
+
 const ItemDetailConteiner = () => {
 
     const [item, setItem] = useState()
@@ -16,7 +17,8 @@ const ItemDetailConteiner = () => {
                  {
                   title: response.title,
                   img: response.thumbnail,
-                  price: response.price
+                  price: response.price,
+                  stock: response.available_quantity
                 }
                 setItem(aux);
               });

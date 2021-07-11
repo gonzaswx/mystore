@@ -9,15 +9,35 @@ import {getData} from './Utils/const'
 import {useEffect, useState} from "react"
 import { ItemListConteiner } from './components/Conteiner/ItemListConteiner';
 import ItemDetailConteiner from './components/Conteiner/ItemDetailConteiner';
-
+import { BrowserRouter, Route , Switch } from "react-router-dom";
+import { ContactConteiner } from './components/Conteiner/ContactConteiner';
+import ItemDetail from './components/Conteiner/ItemDetail';
 
 function App() {
  
   return (
-    <> 
-            <ItemDetailConteiner/>
-            <ItemListConteiner/>
-    </>  
+
+      <BrowserRouter>
+
+      <nav>
+
+          <NavbarComponent/>
+
+      </nav>
+      
+        <Switch>
+          <Route exact path= "/" component={ItemListConteiner}/>
+          <Route exact path= "/Detail" component ={ItemDetailConteiner}/>
+          <Route exact path="/contacto" component={ContactConteiner}/>
+          <Route path="*" component={() => <h1>Error 404</h1>} />
+        </Switch>
+
+        <footer>
+         <h3>SuperCell </h3> 
+         <h5> Industria argentina </h5>
+
+        </footer>
+      </BrowserRouter>
   );
 }
 
@@ -48,4 +68,16 @@ export default App;
         <CardComponent productData = {product[2]}/>
         <CardComponent productData = {product[3]}/>
         <HomeConteiner/>
-      </header>*/}
+      </header>
+    
+    <> 
+            <ItemDetailConteiner/>
+            <ItemListConteiner/>
+    </>  
+    
+    
+    
+    
+    
+    
+    */}

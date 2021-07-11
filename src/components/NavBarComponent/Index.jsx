@@ -1,26 +1,47 @@
-import Button from 'react-bootstrap/Button';
+import { Nav, Navbar,Form,FormControl,Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
-export const NavbarComponent = ({cart}) => {
+export const NavbarComponent = () => {
     return(
-        <div className= "NavBar">
-        <h1>Im the NavBar</h1><Button variant="contained">Default</Button>
 
-<Button variant="contained" color="primary">
-  Promocion
-</Button>
-<Button variant="contained" color= "primary">
-  Camisetas
-</Button>
-<Button variant="contained" color="primary">
-  Camperas
-</Button>
-<Button variant="contained" color="primary">
-  Botines
-</Button>
-<Button variant="contained" color="primary">
-  Carrito: {cart.length}
-</Button>
+          <NavbarComponent bg="ligth" expand="lg">
+            <Navbar.Brand href="#home">SuperCell</Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav"/>
+              <Navbar.Collapse id="basic-navbar-nav">
+                <Nav className="mr-auto">
+                  <Nav.Link href="#home">Inicio</Nav.Link>
+                  <Nav.Link href="#link"> Produtos </Nav.Link>  
+                  <Nav.Link href="#link"> Promo</Nav.Link>  
+                  <Nav.Link href="#link">Contacto </Nav.Link>  
+                </Nav>
+                <Form inline>
+                  <FormControl type="text" placeholder="Search" className="mr-sm-2"/>
+                  <Button variant="outline-success">Search</Button>
+                </Form>
+              </Navbar.Collapse>
+          </NavbarComponent>
 
-        </div>
     )
 }
+
+
+{/*
+<Button variant="contained">Promo</Button>
+
+<Button variant="contained" color="primary">
+  Samsung
+</Button>
+<Button variant="contained" color= "primary">
+  Motorola
+</Button>
+<Button variant="contained" color="primary">
+  LG
+</Button>
+<Button variant="contained" color="primary">
+<Link to={'/detail'}> Promo </Link>
+</Button>
+<Button variant="contained" color="primary">
+<Link to={'/contacto'}> Ir a contacto </Link>
+</Button>
+
+        </div>*/}
