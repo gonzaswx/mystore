@@ -11,9 +11,6 @@ export const NavbarComponent = () => {
       <Button variant="contained" color="primary">
       <Link to={'/'}> Home </Link>
       </Button>
-      <Button variant="contained" color= "primary">
-      
-      </Button>
       <Button variant="contained" color="primary">
       <Link to={'/Camaras y accesorios'}> Camaras y accesorios </Link>
       </Button>
