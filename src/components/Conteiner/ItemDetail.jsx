@@ -7,9 +7,9 @@ const ItemDetail = ({item}) => {
 
     return (
         <div>
-            <img src={item.img} alt="img celular" />
-            <p> {item.title} </p>
-            <p> {item.price} </p>
+            <img src={item.thumbnail} alt="" />
+            <h1>{item.title} </h1>
+            <h2> ${item.price} </h2>
 
         </div>
     )

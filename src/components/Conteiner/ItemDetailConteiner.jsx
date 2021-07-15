@@ -1,35 +1,23 @@
 import React, { useEffect, useState } from "react";
-import { CardComponent } from "../CardComponent";
 import ItemDetail from "./ItemDetail";
-
+import { useParams } from "react-router";
 
 const ItemDetailConteiner = () => {
 
-    const [item, setItem] = useState()
-
-    useEffect(() =>{
-        fetch  (
-            `https://api.mercadolibre.com/items/MLA928345349`        
-        )
-        .then(response => response.json())
-        .then(response => {
-            let aux =
-                 {
-                  title: response.title,
-                  img: response.thumbnail,
-                  price: response.price,
-                  stock: response.available_quantity
-                }
-                setItem(aux);
-              });
- },[])
-
-console.log(item);
-
+    const {product_id} = useParams()
+    const [item, setItem] = useState([])
+    useEffect(()=>{
+        fetch(`https://api.mercadolibre.com/items/${product_id}`)
+        .then(res => res.json())
+        .then(res=>{
+            setItem(res)
+        })
+    },[product_id])
 
     return (
         <>
-            {item == undefined ?  
+            {
+            item === undefined ?  
             <p> No hay stock </p>
             : 
             <ItemDetail item={item} />

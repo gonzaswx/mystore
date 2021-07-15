@@ -1,5 +1,4 @@
 import React,{useState} from 'react'
-import { button } from 'react-bootstrap'
 
 export const Counter = ({stock, onAdd}) => {
     const [counter,setCounter] = useState(1)

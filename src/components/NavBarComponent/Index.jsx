@@ -1,5 +1,5 @@
 import { Nav, Navbar,Form,FormControl,Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export const NavbarComponent = () => {
     return(
@@ -8,18 +8,10 @@ export const NavbarComponent = () => {
       <Navbar.Toggle aria-controls="basic-navbar-nav"/>
       <Nav className="mr-auto">
 
-      <Button variant="contained" color="primary">
-      <Link to={'/'}> Home </Link>
-      </Button>
-      <Button variant="contained" color="primary">
-      <Link to={'/Camaras y accesorios'}> Camaras y accesorios </Link>
-      </Button>
-      <Button variant="contained" color="primary">
-      <Link to={'/detail'}> Promo </Link>
-      </Button>
-      <Button variant="contained" color="primary">
-      <Link to={'/contacto'}> Ir a contacto </Link>
-      </Button>
+      <Nav.Link><NavLink to="/">Home</NavLink></Nav.Link>
+      <Nav.Link><NavLink to="/productos">Productos</NavLink></Nav.Link>
+      <Nav.Link><NavLink to="/contacto">Contacto</NavLink></Nav.Link>
+
       </Nav>
       <Form inline>
                   <FormControl type="text" placeholder="Search" className="mr-sm-2"/>

@@ -1,18 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
-import { CardComponent } from "./components/CardComponent";
 import { NavbarComponent } from "./components/NavBarComponent/Index";
-import { NAME_App } from "./Utils/const";
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { HomeConteiner } from './components/Conteiner';
-import {getData} from './Utils/const'
-import {useEffect, useState} from "react"
-import { ItemListConteiner } from './components/Conteiner/ItemListConteiner';
-import ItemDetailConteiner from './components/Conteiner/ItemDetailConteiner';
 import { BrowserRouter, Route , Switch } from "react-router-dom";
-import { ContactConteiner } from './components/Conteiner/ContactConteiner';
-import { ItemListConteiner3 } from './components/Conteiner';
-import { ItemListConteiner2 } from './components/Conteiner/ItemListConteiner2';
+import { Main } from './components/Conteiner/Main';
 
 function App() {
  
@@ -27,12 +17,9 @@ function App() {
       </nav>
       
         <Switch>
-        <Route exact path= "/" component={ItemListConteiner3}/>
-          <Route exact path= "/Camaras y accesorios" component={ItemListConteiner2}/>
-          <Route exact path= "/Samsung" component={ItemListConteiner}/>
-          <Route exact path= "/Detail" component ={ItemDetailConteiner}/>
-          <Route exact path="/contacto" component={ContactConteiner}/>
-          <Route path="*" component={() => <h1>Error 404</h1>} />
+          
+          <Main/>
+
         </Switch>
 
         <footer>
